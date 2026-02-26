@@ -1,0 +1,26 @@
+@use "../abstract/" as *;
+
+.btn {
+  display: inline-block;
+  padding: 0.3rem 1.5rem;
+  background-color: transparent;
+  border: 2px solid transparent;
+  font-size: 1rem;
+  transition: 0.5 ease;
+  &.btn--light {
+    background-color: $clr--primary;
+    color: $clr--light;
+    
+    &:hover {
+      background-color: $clr--dark;
+      color: $clr--light;
+      border: 1px solid $clr--light;
+      transition: 0.5 ease;
+    }
+  }
+  
+}
+.btn--text {
+  color: $clr--dark;
+  transition: 0.5 ease;
+}

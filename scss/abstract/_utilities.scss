@@ -1,22 +1,20 @@
 @use "./colors" as *;
 
 $colors: (
-  // key and value
   "primary": $clr--primary,
   "secondary": $clr--secondary,
   "light": $clr--light,
   "dark": $clr--dark
 );
 
-//INTERPOLATION, PARA MAGAMIT -> example; text--dark
+
 @each $key, $val in $colors {
-  //COLORS
   .text {
     &--#{$key} {
       color: $val;
     }
   }
-  //BACKGROUND COLOR
+  
   .bg {
     &--#{$key} {
       background-color: $val;
@@ -24,7 +22,7 @@ $colors: (
   }
 }
 
-//TO USE -> example: t-align--left
+
 $text--align: left, right, center, justify;
 @each $val in $text--align {
   .t-align--#{$val} {
@@ -32,7 +30,7 @@ $text--align: left, right, center, justify;
   }
 }
 
-//DISPLAY
+
 $display: block, inline, inline-block, flex, grid;
 @each $val in $display {
   .d--#{$val} {
@@ -40,7 +38,7 @@ $display: block, inline, inline-block, flex, grid;
   }
 }
 
-//POSITION
+
 $position: absolute, relative, static, fixed;
 @each $val in position {
   .position--#{val} {
@@ -48,54 +46,52 @@ $position: absolute, relative, static, fixed;
   }
 }
 
-//MARGIN,PADDING
+
 @for $i from 0 through 20 {
-  //MARGIN
+
   .m--#{$i} {
     margin: $i + rem;
   }
-  //margin x axis
+  
   .mx--#{i} {
     margin: 0 $i + rem;
   }
-  //margin y axis
+
   .my--#{i} {
     margin: $i + rem 0;
   }
-  //margin botton
+
   .mb--#{$i} {
     margin-bottom: $i + rem;
   }
-  //margin top
   .mt--#{$i} {
     margin-top: $i + rem;
   }
-  //margin left
+
   .ml--#{$i} {
     margin-left: $i + rem;
   }
-  //margin right
+
   .mr--#{$i} {
     margin-right: $i + rem;
   }
 
-  //PADDING
   .p--#{$i} {
     padding: $i + rem;
   }
-  //padding x axis
+  
   .px--#{$i} {
     padding: 0 $i + rem;
   }
-  //padding y axis
+
   .py--#{$i} {
     padding: $i + rem 0;
   }
-  //padding bottom
+
   .pb--#{$i} {
     padding-bottom: $i + rem;
   }
-  //padding top
+  
   .pt--#{$i} {
     padding-top: $i + rem;
   }

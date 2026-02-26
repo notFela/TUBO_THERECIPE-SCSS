@@ -1,0 +1,120 @@
+@use "../abstract/" as *;
+@use "../base" as *;
+
+/*HEADER*/
+
+.header {
+  padding: 3rem 0;
+  position: relative;
+
+  &__wrapper {
+    @include between;
+  }
+
+  &__logo {
+    a {
+      h4 {
+        color: $clr--dark;
+        font-weight: 2px;
+      }
+    }
+  }
+
+  &__nav {
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: 0.5s ease;
+    }
+
+    li {
+      a {
+        color: $clr--dark;
+        font-size: 15px;
+      }
+    }
+
+    /* Mobile open state */
+    &.open {
+      ul {
+        right: 0;
+      }
+    }
+  }
+
+  /*mobile*/
+
+  @include mediaQuery(520px) {
+    padding: 1.5rem 0;
+    position: fixed;
+    width: 100%;
+    background: $clr--light;
+    z-index: 100;
+
+    &__button {
+      display: none;
+    }
+
+    &__nav {
+      ul {
+        background-color: $clr--light;
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        margin-top: 3.9rem;
+
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+      }
+
+      li {
+        a {
+          font-size: 1.5rem;
+          color: $clr--dark;
+        }
+      }
+    }
+  }
+}
+
+/* ===================================== */
+/* TOGGLE MENU */
+/* ===================================== */
+
+.toggle__menu {
+  display: none;
+
+  span {
+    width: 2.5rem;
+    height: 0.3rem;
+    background-color: $clr--dark;
+    border-radius: 1rem;
+    transition: 0.5s ease;
+  }
+
+  @include mediaQuery(520px) {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    z-index: 101;
+  }
+
+  /* Hamburger Animation */
+  &.open {
+    span:first-child {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    span:nth-child(2) {
+      opacity: 0;
+    }
+
+    span:last-child {
+      transform: translateY(-20.5px) rotate(-45deg);
+    }
+  }
+}

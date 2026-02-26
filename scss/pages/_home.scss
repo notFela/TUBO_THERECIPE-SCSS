@@ -1,0 +1,200 @@
+@use "../base/typography" as *;
+@use "../abstract/" as *;
+
+.homeBanner {
+  padding: 4rem 0;
+  &__wrapper {
+    @include gridFixed(2, 6rem);
+    align-items: center;
+  }
+
+  &__left {
+    small {
+      text-transform: uppercase;
+      color: $clr--primary;
+      letter-spacing: 1rem;
+      font-size: 15px;
+    }
+    h1 {
+      font-family: $font-secondary;
+      font-size: 60px;
+    }
+    p {
+      font-family: $font-primary;
+      font-size: 20px;
+      text-align: justify;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+.recipe {
+  padding: 4rem 0;
+
+  &__wrapper {
+    align-items: center;
+  }
+  h5 {
+    font-size: 30px;
+    padding: 1rem;
+    text-align: center;
+    font-family: $font-secondary;
+    color: $clr--primary;
+  }
+  &__cards {
+    @include gridFixed(4, 2rem);
+    img {
+      width: 100%;
+      height: 60%;
+    }
+  }
+}
+.cards__details {
+  text-align: center;
+  small {
+    font-size: 15px;
+    letter-spacing: 0.5rem;
+    color: $clr--primary;
+  }
+  h5 {
+    font-family: $font-secondary;
+    font-weight: 5px;
+  }
+  p {
+    text-align: justify;
+    font-size: 18px;
+  }
+}
+
+.collection {
+  padding: 5rem 0;
+
+  &__wrapper {
+    align-items: center;
+  }
+  h5 {
+    font-size: 30px;
+    font-family: $font-secondary;
+    color: $clr--primary;
+    margin-bottom: 2rem;
+  }
+}
+.card__details {
+  margin-left: 3rem;
+  margin-top: 5rem;
+
+  small {
+    font-size: 15px;
+    letter-spacing: 0.5rem;
+    color: $clr--primary;
+    margin-bottom: 3rem;
+  }
+  h5 {
+    font-size: 40px;
+    color: $clr--dark;
+    margin-bottom: 1rem;
+  }
+  p {
+    font-size: 18px;
+    text-align: justify;
+    margin-bottom: 2.5rem;
+  }
+}
+.card {
+  @include gridFixed(2, 1rem);
+  margin-bottom: 2rem;
+  &--reverse {
+    img {
+      order: 2;
+    }
+  }
+}
+
+.newsletter {
+  padding: 10rem 0 5rem;
+  background-image:
+    linear-gradient(rgba(200, 200, 200, 0.534)),
+    url("../../images/bell_pepper.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &__wrapper {
+    align-items: center;
+  }
+}
+.newsletter__title {
+  h1 {
+    text-align: center;
+    color: #ffffff;
+  }
+  p {
+    text-align: center;
+    color: #ffffff;
+  }
+}
+
+.subscribe {
+  display: flex;
+  max-width: 600px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: $clr--light;
+  margin: 3rem auto 0;
+
+  input {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+  }
+
+  button {
+    padding: 1rem 2rem;
+    border: none;
+    background-color: $clr--primary;
+    color: $clr--light;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    &:hover {
+      background-color: darken($clr--primary, 10%);
+    }
+  }
+}
+
+.classic{
+padding: 4rem 0;
+
+  &__wrapper{
+    align-items: center;
+    
+  }
+  h5 {
+    font-size: 30px;
+    padding: 1rem;
+    text-align: center;
+    font-family: $font-secondary;
+    color: $clr--primary;
+  }
+  &__cards {
+    @include gridFixed(3, 9rem);
+
+    .classic {
+     display: flex;
+      align-items: center;
+    }
+
+    img {
+     @include imgFit(300px, 250px)
+    }
+  }
+  &__details{
+    small{
+    letter-spacing: 0.5rem; 
+    }
+  }
+}
