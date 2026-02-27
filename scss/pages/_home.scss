@@ -1,11 +1,14 @@
-@use "../base/typography" as *;
 @use "../abstract/" as *;
-
+@use "../base/" as *;
 .homeBanner {
   padding: 4rem 0;
   &__wrapper {
     @include gridFixed(2, 6rem);
     align-items: center;
+
+    @include mediaQuery(520px) {
+      @include gridFixed(1, 0);
+    }
   }
 
   &__left {
@@ -43,6 +46,10 @@
     color: $clr--primary;
   }
   &__cards {
+    @include gridFixed(4, 2rem);
+    @include mediaQuery(520px) {
+      @include gridFixed(1, 0);
+    }
     @include gridFixed(4, 2rem);
     img {
       width: 100%;
@@ -102,12 +109,18 @@
   }
 }
 .card {
+  @include gridFixed(2, 2rem);
+  @include mediaQuery(520px) {
+  }
   @include gridFixed(2, 1rem);
   margin-bottom: 2rem;
   &--reverse {
     img {
       order: 2;
     }
+  }
+  .recipe__stars {
+    color: $clr--dark;
   }
 }
 
@@ -150,51 +163,60 @@
     outline: none;
     font-size: 1rem;
   }
-
-  button {
-    padding: 1rem 2rem;
-    border: none;
-    background-color: $clr--primary;
-    color: $clr--light;
-    font-weight: 500;
-    cursor: pointer;
-    transition: 0.3s ease;
-
-    &:hover {
-      background-color: darken($clr--primary, 10%);
-    }
-  }
 }
 
-.classic{
-padding: 4rem 0;
+.classicCollec {
+  padding: 4rem 0;
+  display: flex;
+  &__title {
+    h3 {
+      display: flex;
+      align-items: center;
+      font-family: $font-secondary;
+      color: $clr--primary;
+      gap: 1rem;
 
-  &__wrapper{
-    align-items: center;
-    
+      &::after {
+        content: "";
+        display: block;
+        border: 1px solid $clr--primary;
+        flex: 1;
+      }
+    }
   }
-  h5 {
-    font-size: 30px;
-    padding: 1rem;
-    text-align: center;
-    font-family: $font-secondary;
-    color: $clr--primary;
-  }
-  &__cards {
-    @include gridFixed(3, 9rem);
+  &__wrapper {
+    padding: 4rem 0;
+    display: grid;
+    @include gridFixed(3, 1fr);
+    gap: 2rem;
 
-    .classic {
-     display: flex;
+    &__card {
+      display: flex;
+      gap: 1rem;
       align-items: center;
     }
-
     img {
-     @include imgFit(300px, 250px)
+      @include imgFit(150px, 200px);
+      object-fit: cover;
     }
-  }
-  &__details{
-    small{
-    letter-spacing: 0.5rem; 
+
+    .recipes__info {
+      h4 {
+        font-family: $font-secondary;
+        font-weight: bolder;
+        margin: 0.3rem 0;
+        padding: 0.5 0;
+      }
+      small {
+        letter-spacing: 0.5rem;
+        font-size: 15px;
+        color: $clr--primary;
+      }
+
+      .recipes__stars {
+        color: $clr--primary;
+        padding: 1rem 0;
+      }
     }
   }
 }

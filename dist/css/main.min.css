@@ -1411,9 +1411,9 @@ img {
   color: #dedbdb;
 }
 .btn.btn--light:hover {
-  background-color: #666666;
-  color: #dedbdb;
-  border: 1px solid #dedbdb;
+  background-color: #f9e9d7;
+  color: #666666;
+  border: 1px solid #f9e9d7;
   transition: 0.5 ease;
 }
 
@@ -1518,6 +1518,18 @@ img {
   transform: translateY(-20.5px) rotate(-45deg);
 }
 
+.footer {
+  background-color: #f9e9d7;
+  padding: 3rem 0;
+  text-align: center;
+}
+.footer__links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
 .homeBanner {
   padding: 4rem 0;
 }
@@ -1526,6 +1538,13 @@ img {
   grid-template-columns: repeat(2, 1fr);
   gap: 6rem;
   align-items: center;
+}
+@media screen and (max-width: 520px) {
+  .homeBanner__wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0;
+  }
 }
 .homeBanner__left small {
   text-transform: uppercase;
@@ -1557,6 +1576,18 @@ img {
   text-align: center;
   font-family: "Playfair Display", serif;
   color: #d9964a;
+}
+.recipe__cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+@media screen and (max-width: 520px) {
+  .recipe__cards {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0;
+  }
 }
 .recipe__cards {
   display: grid;
@@ -1622,11 +1653,19 @@ img {
 .card {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+.card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   margin-bottom: 2rem;
 }
 .card--reverse img {
   order: 2;
+}
+.card .recipe__stars {
+  color: #666666;
 }
 
 .newsletter {
@@ -1664,49 +1703,388 @@ img {
   outline: none;
   font-size: 1rem;
 }
-.subscribe button {
-  padding: 1rem 2rem;
-  border: none;
-  background-color: #d9964a;
-  color: #dedbdb;
-  font-weight: 500;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-.subscribe button:hover {
-  background-color: rgb(198.3561643836, 124.9315068493, 41.6438356164);
-}
 
-.classic {
+.classicCollec {
   padding: 4rem 0;
+  display: flex;
 }
-.classic__wrapper {
-  align-items: center;
-}
-.classic h5 {
-  font-size: 30px;
-  padding: 1rem;
-  text-align: center;
-  font-family: "Playfair Display", serif;
-  color: #d9964a;
-}
-.classic__cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 9rem;
-}
-.classic__cards .classic {
+.classicCollec__title h3 {
   display: flex;
   align-items: center;
+  font-family: "Playfair Display", serif;
+  color: #d9964a;
+  gap: 1rem;
 }
-.classic__cards img {
-  width: 300px;
-  height: 250px;
+.classicCollec__title h3::after {
+  content: "";
+  display: block;
+  border: 1px solid #d9964a;
+  flex: 1;
+}
+.classicCollec__wrapper {
+  padding: 4rem 0;
+  display: grid;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1fr;
+  gap: 2rem;
+}
+.classicCollec__wrapper__card {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.classicCollec__wrapper img {
+  width: 150px;
+  height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+  object-fit: cover;
 }
-.classic__details small {
+.classicCollec__wrapper .recipes__info h4 {
+  font-family: "Playfair Display", serif;
+  font-weight: bolder;
+  margin: 0.3rem 0;
+  padding: 0.5 0;
+}
+.classicCollec__wrapper .recipes__info small {
   letter-spacing: 0.5rem;
+  font-size: 15px;
+  color: #d9964a;
+}
+.classicCollec__wrapper .recipes__info .recipes__stars {
+  color: #d9964a;
+  padding: 1rem 0;
+}
+
+.aboutBanner {
+  padding: 4rem 0;
+  background: linear-gradient(to bottom, #f9e9d7 50%, transparent 50%), center/cover no-repeat;
+}
+.aboutBanner__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.aboutBanner__title h1 {
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+}
+
+.about {
+  padding: 4rem 0;
+}
+.about__wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6rem;
+  align-items: center;
+}
+.about__left p {
+  font-family: "Mulish", sans-serif;
+  font-size: 20px;
+  text-align: justify;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.about__left h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 50px;
+}
+.about__left ul li {
+  font-size: 20px;
+}
+.about__right {
+  margin-top: 15rem;
+}
+.about__right h4 {
+  font-family: "Playfair Display", serif;
+  color: #d9964a;
+}
+.about__right h6 {
+  font-size: 20px;
+}
+.about__right img {
+  width: 150px;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  object-fit: cover;
+  margin-top: 1rem;
+  margin-right: 5rem;
+}
+.about__right .about__info small {
+  letter-spacing: 0.5rem;
+  font-size: 20px;
+  color: #d9964a;
+  font-weight: 700;
+}
+
+.contactBanner {
+  padding: 4rem 0;
+  background: linear-gradient(to bottom, #f9e9d7 50%, transparent 50%), center/cover no-repeat;
+}
+.contactBanner__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.contactBanner__wrapper h3 {
+  font-family: "Playfair Display", serif;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.contactBanner__wrapper img {
+  width: 1500px;
+  height: 900px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 0 auto;
+}
+
+.contactInfo__wrapper {
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40rem;
+}
+.contactInfo__wrapper h3 {
+  font-family: "Playfair Display", serif;
+  margin-bottom: 2rem;
+}
+.contactInfo__wrapper p {
+  margin-top: 1rem;
+}
+.contactInfo .contact__form input,
+.contactInfo .contact__form textarea {
+  padding: 1rem;
+  border: 1px solid #666666;
+  font-size: 16px;
+  width: 250%;
+  margin-bottom: 1rem;
+}
+.contactInfo .contact__form textarea {
+  padding: 4rem;
+}
+.contactInfo__left a {
+  color: #dedbdb;
+}
+.contactInfo__right {
+  background-color: #d9964a;
+  width: 400px;
+  height: 500px;
+  padding: 4rem;
+}
+.contactInfo__right .email,
+.contactInfo__right .phone,
+.contactInfo__right .address {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  color: #dedbdb;
+}
+.contactInfo__right h4 {
+  color: #dedbdb;
+  font-family: "Playfair Display", serif;
+}
+.contactInfo__right p {
+  color: #dedbdb;
+}
+
+.recipeBanner {
+  background-color: #f9e9d7;
+  height: 65rem;
+  margin-bottom: 10rem;
+  padding: 4rem 0;
+  position: relative;
+}
+.recipeBanner__wrapper {
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+}
+.recipeBanner__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-items: end;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #666666;
+}
+.recipeBanner__title h1 {
+  font-family: "Playfair Display", serif;
+  text-align: left;
+  width: 60%;
+}
+.recipeBanner__title p {
+  padding-bottom: 0.5rem;
+}
+.recipeBanner__subtitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #666666;
+}
+.recipeBanner__ingredients {
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.recipeBanner__ingredients img {
+  height: 750px;
+  width: 900px;
+}
+.recipeBanner__ingredients .details {
+  padding: 2rem;
+  background-color: #d9964a;
+  color: #dedbdb;
+  font-size: 25px;
+}
+.recipeBanner__ingredients .details h3 {
+  padding: 1rem 0;
+}
+.recipeBanner__ingredients .details ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+@media screen and (max-width: 520px) {
+  .recipeBanner {
+    height: auto;
+    margin-bottom: 5rem;
+    padding: 8rem 1.5rem;
+  }
+  .recipeBanner__title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .recipeBanner__title h1 {
+    width: 100%;
+    font-size: 2rem;
+  }
+  .recipeBanner__subtitle {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .recipeBanner__ingredients {
+    flex-direction: column;
+  }
+  .recipeBanner__ingredients .details {
+    width: 100%;
+    padding: 1.5rem;
+  }
+}
+
+.recipeBody {
+  padding: 2rem 0;
+}
+.recipeBody h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  font-family: "Playfair Display", serif;
+  color: #d9964a;
+}
+.recipeBody h2::after {
+  content: "";
+  flex: 1;
+  height: 0.1rem;
+  background-color: #d9964a;
+}
+.recipeBody__wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+.recipeBody__left {
+  width: 60rem;
+  padding: 2rem 0;
+}
+.recipeBody__left--steps {
+  text-align: justify;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #666666;
+}
+.recipeBody__left--steps h4,
+.recipeBody__left--steps p {
+  padding: 1rem 0;
+}
+.recipeBody__left--nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+.recipeBody__left--nav a {
+  color: #666666;
+}
+.recipeBody__left h3 {
+  padding: 2rem 0;
+  font-family: "Playfair Display", serif;
+  color: #d9964a;
+}
+.recipeBody__right--tags {
+  font-size: 0.8rem;
+  margin-bottom: 20px;
+  line-height: 2;
+}
+.recipeBody__right--tags .tag {
+  display: inline-block;
+  background: #eee;
+  border-radius: 20px;
+  padding: 2px 10px;
+  font-size: 0.75rem;
+  margin: 2px 2px 0 0;
+}
+.recipeBody__right--recipes h3 {
+  font-family: "Playfair Display", serif;
+  padding: 1rem 0;
+  color: #d9964a;
+}
+.recipeBody__right--recipes .cards {
+  display: flex;
+  padding: unset;
+  gap: 1rem;
+}
+.recipeBody__right--recipes .cards img {
+  width: 200px;
+  height: 200px;
+}
+.recipeBody__right--recipes .cards ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+.recipeBody__right--recipes .cards ul li {
+  display: flex;
+  align-items: center;
+}
+.recipeBody__right--recipes .cards ul i {
+  font-size: 20px;
+  color: #d9964a;
+}
+.recipeBody__right--recipes .cards a {
+  color: #666666;
+}
+.recipeBody__right--recipes .cards h4 {
+  font-family: "Playfair Display", serif;
+  margin-bottom: 0.5rem;
+}
+.recipeBody__right--recipes .cards .small {
+  font-size: 20px;
+  color: #d9964a;
 }/*# sourceMappingURL=main.min.css.map */

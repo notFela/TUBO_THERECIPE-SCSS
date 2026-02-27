@@ -10,15 +10,14 @@
   &.btn--light {
     background-color: $clr--primary;
     color: $clr--light;
-    
+
     &:hover {
-      background-color: $clr--dark;
-      color: $clr--light;
-      border: 1px solid $clr--light;
+      background-color: $clr--secondary;
+      color: $clr--dark;
+      border: 1px solid $clr--secondary;
       transition: 0.5 ease;
     }
   }
-  
 }
 .btn--text {
   color: $clr--dark;

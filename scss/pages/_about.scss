@@ -1,0 +1,74 @@
+@use "../abstract/" as *;
+@use "../base/" as *;
+
+.aboutBanner {
+  padding: 4rem 0;
+  background:
+    linear-gradient(to bottom, $clr--secondary 50%, transparent 50%),
+    center/cover no-repeat;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include mediaQuery(520px) {
+    }
+  }
+  &__title {
+    h1 {
+      font-weight: 600;
+      margin-bottom: 30px;
+      text-align: center;
+      font-family: $font-secondary;
+    }
+  }
+}
+.about {
+  padding: 4rem 0;
+  &__wrapper {
+    @include gridFixed(2, 6rem);
+    align-items: center;
+  }
+  &__left {
+    p {
+      font-family: $font-primary;
+      font-size: 20px;
+      text-align: justify;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    h2 {
+      font-family: $font-secondary;
+      font-size: 50px;
+    }
+    ul {
+      li {
+        font-size: 20px;
+      }
+    }
+  }
+  &__right {
+    margin-top: 15rem;
+    h4 {
+      font-family: $font-secondary;
+      color: $clr--primary;
+    }
+    h6 {
+      font-size: 20px;
+    }
+    img {
+      @include imgFit(150px, 200px);
+      object-fit: cover;
+      margin-top: 1rem;
+      margin-right: 5rem;
+    }
+    .about__info {
+      small {
+        letter-spacing: 0.5rem;
+        font-size: 20px;
+        color: $clr--primary;
+        font-weight: 700;
+      }
+    }
+  }
+}
